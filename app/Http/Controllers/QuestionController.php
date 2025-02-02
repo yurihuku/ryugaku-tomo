@@ -17,4 +17,16 @@ class QuestionController extends Controller
     public function list(Question $question){
         return view('questions.list')->with(['questions' => $question->get()]);
     }
+
+    public function create(){
+        return view('questions.create');
+    }
+
+    public function store(Request $request, Question $question){
+        $input = $request->input('question');
+        $input['country_id'] = 1;
+        $input['user_id'] = 1;
+        $question->fill($input)->save();
+        return redirect('/');
+    }
 }

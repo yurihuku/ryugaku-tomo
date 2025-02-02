@@ -15,3 +15,7 @@ use App\Http\Controllers\QuestionController;
 */
 
 Route::get('/', [QuestionController::class, 'list']);
+
+Route::get('/questions/create', [QuestionController::class, 'create']);
+
+Route::post('/questions',[QuestionController::class, 'store']);
