@@ -21,3 +21,7 @@ Route::get('/questions/create', [QuestionController::class, 'create']);
 Route::post('/questions',[QuestionController::class, 'store']);
 
 Route::get('/questions/{question}', [QuestionController::class, 'show']);
+
+Route::get('/questions/{question}/edit', [QuestionController::class, 'edit']);
+
+Route::put('/questions/{question}', [QuestionController::class, 'update']);

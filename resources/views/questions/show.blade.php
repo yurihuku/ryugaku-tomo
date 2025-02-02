@@ -12,6 +12,7 @@
       <h3>質問内容</h3>
       <p>{{ $question->body }}</p>
     </div>
+    <div class="edit"><a href="/questions/{{ $question->id }}/edit">編集</a></div>
   </div>
   <footer>
     <a href="/">戻る</a>
