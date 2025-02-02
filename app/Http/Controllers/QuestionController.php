@@ -32,6 +32,18 @@ class QuestionController extends Controller
         $input['country_id'] = 1;
         $input['user_id'] = 1;
         $question->fill($input)->save();
-        return redirect('/');
+        return redirect('/questions/' . $question->id);
+    }
+
+    public function edit(Question $question){
+        return view('questions.edit')->with(['question' => $question]);
+    }
+
+    public function update(Question $question, QuestionRequest $request){
+        $input = $request->input('question');
+        $input['country_id'] = 1;
+        $input['user_id'] = 1;
+        $question->fill($input)->save();
+        return redirect('/questions/' . $question->id);
     }
 }
