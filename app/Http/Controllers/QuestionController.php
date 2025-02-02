@@ -19,6 +19,10 @@ class QuestionController extends Controller
         return view('questions.list')->with(['questions' => $question->get()]);
     }
 
+    public function show(Question $question){
+        return view('questions.show')->with(['question' => $question]);
+    }
+
     public function create(){
         return view('questions.create');
     }

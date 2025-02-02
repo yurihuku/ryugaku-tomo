@@ -11,7 +11,9 @@
   <div class="questions">
     @foreach ($questions as $question)
     <div class="question">
-      <h2 class="title">{{ $question->title }}</h2>
+      <h2 class="title">
+        <a href="/questions/{{ $question->id }}">{{ $question->title }}></a>
+      </h2>
       <p>{{ $question->body }}</p>
     </div>
     @endforeach
