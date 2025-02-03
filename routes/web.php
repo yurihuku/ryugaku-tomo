@@ -14,7 +14,7 @@ use App\Http\Controllers\QuestionController;
 |
 */
 
-Route::get('/', [QuestionController::class, 'list']);
+Route::get('/', [QuestionController::class, 'index']);
 
 Route::get('/questions/create', [QuestionController::class, 'create']);
 
@@ -25,3 +25,5 @@ Route::get('/questions/{question}', [QuestionController::class, 'show']);
 Route::get('/questions/{question}/edit', [QuestionController::class, 'edit']);
 
 Route::put('/questions/{question}', [QuestionController::class, 'update']);
+
+Route::delete('/questions/{question}', [QuestionController::class, 'delete']);
