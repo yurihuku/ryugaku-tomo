@@ -15,8 +15,8 @@ use App\Http\Requests\QuestionRequest;
 
 class QuestionController extends Controller
 {
-    public function list(Question $question){
-        return view('questions.list')->with(['questions' => $question->get()]);
+    public function index(Question $question){
+        return view('questions.index')->with(['questions' => $question->get()]);
     }
 
     public function show(Question $question){
@@ -45,5 +45,10 @@ class QuestionController extends Controller
         $input['user_id'] = 1;
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
+    }
+
+    public function delete(Question $question){
+        $question->delete();
+        return redirect('/');
     }
 }
