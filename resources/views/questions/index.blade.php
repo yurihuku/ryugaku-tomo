@@ -7,6 +7,7 @@
 </head>
 <body>
   <h1>留学トモQ&A</h1>
+  <nav><li><a href="/posts">悩みコーナー</a></li></nav>
   <a href="/questions/create">作成</a>
   <div class="questions">
     @foreach ($questions as $question)
