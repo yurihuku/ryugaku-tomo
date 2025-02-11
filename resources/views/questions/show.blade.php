@@ -14,6 +14,27 @@
     </div>
     <div class="edit"><a href="/questions/{{ $question->id }}/edit">編集</a></div>
   </div>
+
+  <form action="/questions/reply" method="POST">
+    @csrf
+    <div class="comment">
+      <input type="text" name="question_reply[comment]" placeholder="コメント入力" value="{{ old('question_reply.comment') }}">
+      <input type="hidden" name="question_reply[question_id]" value="{{ $question->id }}">
+      <p class="comment_error" style="color:red">{{ $errors->first('question_reply.comment') }}</p>
+    </div>
+    <input class="cursor-pointer" type="submit" value="返信">
+  </form>
+
+  <div class="question_reply">
+    @foreach ($question->question_replies as $question_reply)
+    <div>
+      <p>{{ $question_reply->user->name }}</p>
+      <p>{{ $question_reply->comment }}</p>
+    </div>
+    @endforeach
+  </div>
+
+
   <footer>
     <a href="/">戻る</a>
   </footer>
