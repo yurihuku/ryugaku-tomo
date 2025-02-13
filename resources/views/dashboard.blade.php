@@ -11,6 +11,7 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                <div><a href="/questions" class="p-6">go to Ryugaku TOMO page</a></div>
             </div>
         </div>
     </div>

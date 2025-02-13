@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Http\Requests\QuestionRequest;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Question一覧を表示する
@@ -28,9 +29,10 @@ class QuestionController extends Controller
     }
 
     public function store(Question $question, QuestionRequest $request){
+        $user = Auth::user();
         $input = $request->input('question');
-        $input['country_id'] = 1;
-        $input['user_id'] = 1;
+        $input['user_id'] = $user->id;
+        $input['country_id'] = $user->country_id;
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
@@ -41,9 +43,7 @@ class QuestionController extends Controller
 
     public function update(Question $question, QuestionRequest $request){
         $input = $request->input('question');
-        $input['country_id'] = 1;
-        $input['user_id'] = 1;
-        $question->fill($input)->save();
+        $question->fill($input)->update();
         return redirect('/questions/' . $question->id);
     }
 
