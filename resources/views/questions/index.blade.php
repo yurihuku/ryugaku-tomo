@@ -7,14 +7,14 @@
 </head>
 <body>
   <h1>留学トモQ&A</h1>
-  <nav><li><a href="/posts">悩みコーナー</a></li></nav>
+  <nav><li><a href="/posts">ツブヤキ</a></li></nav>
   
   <!-- 検索機能 -->
-  <!-- <div class="search">
-    <form action="{{ route('index') }}" method="GET">
+  <div class="search">
+    <form action="/questions" method="GET">
     <input type="text" name="keyword" value="{{$keyword}}">
     <input type="submit" value="検索">  
-    </form> -->
+    </form>
 
   </div>
   <a href="/questions/create">作成</a>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Question;
+use Illuminate\Http\Request;
 use App\Http\Requests\QuestionRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,26 +16,17 @@ use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
-    public function index(Question $uestion){
+    public function index(Question $question, Request $request){
         $user = Auth::user();
-        $uestions = $uestion->where('country_id', $user->country_id)->get();
-        return view('uestions.index')->with(['uestions' => $uestions]);
+        $keyword = $request->input('keyword');
+
+        $questions = $question->where('country_id', $user->country_id);
+        if(!empty($keyword)){
+            $questions->where('title', 'LIKE', "%{$keyword}%")->orWhere('body', 'LIKE', "%{$keyword}%");
+        }
+        $questions = $questions->get();
+        return view('questions.index')->with(['questions' => $questions, 'keyword' => $keyword]);
     }
-
-    // public function index(Question $question){
-    //     return view('questions.index')->with(['questions' => $question->get()]);
-    // }
-    // public function index(Question $question, Request $request){
-        // $user = Auth::user();
-        // $keyword = $request->input('keyword');
-
-        // $questions = $question->where('country_id', $user->country_id);
-
-        // if(!empty($keyword)){
-        //     $questions->where('title', 'LIKE', "%{$keyword}%")->orWhere('body', 'LIKE', "%{keyword}%")->get();
-        // }
-        // return view('questions.index')->with(['questions' => $questions, 'keyword' => $keyword]);
-    // }
 
     public function show(Question $question){
         return view('questions.show')->with(['question' => $question]);

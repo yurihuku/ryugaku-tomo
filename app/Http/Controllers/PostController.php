@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,14 +17,16 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    // public function index(Post $Post){
-    //     return view('Posts.index')->with(['Posts' => $Post->get()]);
-    // }
-
-    public function index(Post $post){
+    public function index(Post $post, Request $request){
         $user = Auth::user();
-        $posts = $post->where('country_id', $user->country_id)->get();
-        return view('posts.index')->with(['posts' => $posts]);
+        $keyword = $request->input('keyword');
+
+        $posts = $post->where('country_id', $user->country_id);
+        if(!empty($keyword)){
+            $posts->where('title', 'LIKE', "%{$keyword}%")->orWhere('body', 'LIKE', "%{$keyword}%");
+        }
+        $posts = $posts->get();
+        return view('posts.index')->with(['posts' => $posts, 'keyword' => $keyword]);
     }
 
     public function show(Post $post){
