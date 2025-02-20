@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
-    public function index(Question $question){
-        return view('questions.index')->with(['questions' => $question->get()]);
+    public function index(Question $uestion){
+        $user = Auth::user();
+        $uestions = $uestion->where('country_id', $user->country_id)->get();
+        return view('uestions.index')->with(['uestions' => $uestions]);
     }
+
+    // public function index(Question $question){
+    //     return view('questions.index')->with(['questions' => $question->get()]);
+    // }
     // public function index(Question $question, Request $request){
         // $user = Auth::user();
         // $keyword = $request->input('keyword');
