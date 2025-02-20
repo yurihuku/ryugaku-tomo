@@ -6,7 +6,14 @@
   <title>留学トモ　質問一覧</title>
 </head>
 <body>
-  <h1>留学トモ悩みコーナー</h1>
+  <h1>ツブヤキ</h1>
+    <!-- 検索機能 -->
+    <div class="search">
+    <form action="/posts" method="GET">
+    <input type="text" name="keyword" value="{{$keyword}}">
+    <input type="submit" value="検索">  
+    </form>
+
   <a href="/posts/create">作成</a>
   <div class="posts">
     @foreach ($posts as $post)
