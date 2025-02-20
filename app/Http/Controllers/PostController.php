@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    public function index(Post $Post){
-        return view('Posts.index')->with(['Posts' => $Post->get()]);
-    }
-
-    // public function index(Post $post){
-    //     $user = Auth::user();
-    //     $posts = $post->where('country_id', $user->country_id)->get();
-    //     return view('posts.index')->with(['posts' => $posts]);
+    // public function index(Post $Post){
+    //     return view('Posts.index')->with(['Posts' => $Post->get()]);
     // }
+
+    public function index(Post $post){
+        $user = Auth::user();
+        $posts = $post->where('country_id', $user->country_id)->get();
+        return view('posts.index')->with(['posts' => $posts]);
+    }
 
     public function show(Post $post){
         return view('posts.show')->with(['post' => $post]);
