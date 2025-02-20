@@ -19,7 +19,27 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function country(){
+        return $this->belongsTo(Country::class);
+    }
+
     public function post_replies(){
         return $this->hasMany(PostReply::class);
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+
+    public function supports(){
+        return $this->hasMany(Support::class);
+    }
+
+    public function userLikes(){
+        return $this->belongsToMany(User::class, 'likes');
+    }
+
+    public function userSupports(){
+        return $this->belongsToMany(User::class, 'supports');
     }
 }

@@ -5,6 +5,8 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuestionReplyController;
 use App\Http\Controllers\PostReplyController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SupportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +56,11 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 Route::post('/posts/reply', [PostReplyController::class, 'reply'])->middleware("auth");
 
 Route::post('/questions/reply', [QuestionReplyController::class, 'reply'])->middleware("auth");
+
+// Reactions
+Route::post('/posts/{post}/like', [LikeController::class, 'likePost'])->middleware("auth");
+
+Route::post('/posts/{post}/support', [SupportController::class, 'SupportPost'])->middleware("auth");
 
 
 Route::middleware('auth')->group(function () {
