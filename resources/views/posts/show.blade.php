@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -9,7 +9,7 @@
   <title>質問内容詳細</title>
 </head>
 
-<body>
+<body> -->
   <x-app-layout>
     <x-slot name="header">
     </x-slot>
@@ -47,10 +47,11 @@
             @else
             <div class="flex h-16 w-16 items-center justify-center rounded-xl border"><ion-icon name="heart-outline" class="like-btn cursor-pointer" id="{{$post->id}}_like"></ion-icon></div>
             @endif
-            <p class="count-num text-center">{{ $post->likes()->sum('count') }}</p>
+            <p class="count-num-likes text-center">{{ $post->likes()->sum('count') }}</p>
             @endauth
             <p class="mt-1 text-center text-sm">わかる</p>
           </div>
+
           <div class="support_reaction">
             @auth
             @if (Auth::user()->supports()->where('post_id', $post->id)->exists())
@@ -58,7 +59,7 @@
             @else
             <div class="flex h-16 w-16 items-center justify-center rounded-xl border"><ion-icon name="flame-outline" class="support-btn cursor-pointer" id="{{$post->id}}_support"></ion-icon></div>
             @endif
-            <p class="count-num text-center">{{ $post->supports()->sum('count') }}</p>
+            <p class="count-num-supports text-center">{{ $post->supports()->sum('count') }}</p>
             @endauth
             <p class="mt-1 text-center text-sm">応援する</p>
           </div>
@@ -107,10 +108,12 @@
       }
     </script>
 
-    <!-- ioniconインストール -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </x-app-layout>
-</body>
 
-</html>
+<!-- </body>
+     ioniconインストール
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</html> -->
