@@ -19,37 +19,35 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [QuestionController::class, 'index'])->middleware("auth")->name('questions.index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 // Question
 
 Route::controller(QuestionController::class)->middleware(['auth'])->group(function(){
-    Route::get('/questions', 'index')->name('index');
-    Route::get('/questions/create', 'create')->name('create');
-    Route::post('/questions', 'store')->name('store');
-    Route::get('/questions/{question}', 'show')->name('show');
-    Route::get('/questions/{question}/edit', 'edit')->name('edit');
-    Route::put('/questions/{question}', 'update')->name('update');
-    Route::delete('/questions/{question}', 'delete')->name('delete');
+    // Route::get('/questions', 'index')->name('questions.index');
+    Route::get('/questions/create', 'create')->name('questions.create');
+    Route::post('/questions', 'store')->name('questions.store');
+    Route::get('/questions/{question}', 'show')->name('questions.show');
+    Route::get('/questions/{question}/edit', 'edit')->name('questions.edit');
+    Route::put('/questions/{question}', 'update')->name('questions.update');
+    Route::delete('/questions/{question}', 'delete')->name('questions.delete');
 });
 
 // Post
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
-    Route::get('/posts', 'index')->name('index');
-    Route::get('/posts/create', 'create')->name('create');
-    Route::post('/posts', 'store')->name('store');
-    Route::get('/posts/{post}', 'show')->name('show');
-    Route::get('/posts/{post}/edit', 'edit')->name('edit');
-    Route::put('/posts/{post}', 'update')->name('update');
-    Route::delete('/posts/{post}', 'delete')->name('delete');    
+    Route::get('/posts', 'index')->name('posts.index');
+    Route::get('/posts/create', 'create')->name('posts.create');
+    Route::post('/posts', 'store')->name('posts.store');
+    Route::get('/posts/{post}', 'show')->name('posts.show');
+    Route::get('/posts/{post}/edit', 'edit')->name('posts.edit');
+    Route::put('/posts/{post}', 'update')->name('posts.update');
+    Route::delete('/posts/{post}', 'delete')->name('posts.delete');    
 });
 
 //Reply
