@@ -41,29 +41,16 @@
       <!-- 共感ボタン -->
       <div class="reactions flex justify-center gap-2.5 pt-4">
         <div class="like_reaction">
-          @auth
-          @if (Auth::user()->likes()->where('post_id', $post->id)->exists())
-          <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(90deg, #3b7df8, #4bfaef)"><ion-icon name="heart" class="like-btn cursor-pointer text-white w-14 h-14" id="{{$post->id}}_like"></ion-icon></div>
-          @else
-          <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(90deg, #3b7df8, #4bfaef)"><ion-icon name="heart-outline" class="like-btn cursor-pointer w-14 h-14" id="{{$post->id}}_like"></ion-icon></div>
-          @endif
+          <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(0deg, #3b7df8, #4bfaef)"><ion-icon name="heart" class="like-btn cursor-pointer text-white w-14 h-14" id="{{$post->id}}_like"></ion-icon></div>
           <p class="count-num-likes text-center">{{ $post->likes()->sum('count') }}</p>
-          @endauth
           <p class="mt-1 text-center text-sm">わかる</p>
         </div>
 
         <div class="support_reaction">
-          @auth
-          @if (Auth::user()->supports()->where('post_id', $post->id)->exists())
-          <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(90deg, #3b7df8, #4bfaef)"><ion-icon name="flame" class="support-btn cursor-pointer text-white w-12 h-12" id="{{$post->id}}_support"></ion-icon></div>
-          @else
-          <div class="flex h-16 w-16 items-center justify-center rounded-xl border " style="background: linear-gradient(90deg, #3b7df8, #4bfaef)"><ion-icon name="flame-outline" class="support-btn cursor-pointer w-12 h-12" id="{{$post->id}}_support"></ion-icon></div>
-          @endif
+          <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(0deg, #3b7df8, #4bfaef)"><ion-icon name="flame" class="support-btn cursor-pointer text-white w-12 h-12" id="{{$post->id}}_support"></ion-icon></div>
           <p class="count-num-supports text-center">{{ $post->supports()->sum('count') }}</p>
-          @endauth
           <p class="mt-1 text-center text-sm">応援する</p>
         </div>
-      </div>
     </div>
 
     <div class="flex-1/2 sm:p-4 sm:pl-8">

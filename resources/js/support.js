@@ -16,13 +16,13 @@ supportBtns.forEach((supportBtn) => {
     .then((data) =>{
       if(data.supportsCount){
         countNumSupports.innerHTML = data.supportsCount;
-        if(e.target.classList.contains("text-pink-500")){
-          e.target.classList.remove("text-pink-500");
-          e.target.setAttribute("name", "flame-outline");
-        }else{
-          e.target.classList.add("text-pink-500");
-          e.target.setAttribute("name", "flame");
-        }
+        // if(e.target.classList.contains("text-pink-500")){
+        //   e.target.classList.remove("text-pink-500");
+        //   e.target.setAttribute("name", "flame-outline");
+        // }else{
+        //   e.target.classList.add("text-pink-500");
+        //   e.target.setAttribute("name", "flame");
+        // }
       }else{
         window.alert(data.message);
       }

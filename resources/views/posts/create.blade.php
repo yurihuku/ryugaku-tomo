@@ -10,11 +10,11 @@
 <body>
   <form action="/posts" method="POST">
   @csrf
-  <div class="title">
+  <!-- <div class="title">
     <h2>タイトル</h2>
     <input type="text" name="post[title]" placeholder="おすすめのスーパーはどれ？" />
     <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
-  </div>
+  </div> -->
   <div class="body">
     <h2>本文</h2>
     <textarea name="post[body]" placeholder="テキサス州に住んでいます。どのスーパーが安いですか？"></textarea>
