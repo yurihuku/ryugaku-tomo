@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Providers;
-
+// ページ
+// use Illuminate\Pagination\Paginator;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
@@ -12,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // ページ
+        // Paginator::useBoostrap();
     }
 
     /**
@@ -20,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        \URL::forceScheme('https');
+        // \URL::forceScheme('https');
         // pagenateするなら
         // $this->app['request']->server->set('HTTPS','on');
 

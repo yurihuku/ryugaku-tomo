@@ -26,7 +26,7 @@ supportBtns.forEach((supportBtn) => {
       }else{
         window.alert(data.message);
       }
-      location.reload();
+      // location.reload();
     })
     
     .catch(error => {

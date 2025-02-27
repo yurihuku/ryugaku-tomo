@@ -23,7 +23,7 @@ class PostController extends Controller
 
         $posts = $post->where('country_id', $user->country_id);
         if(!empty($keyword)){
-            $posts->where('title', 'LIKE', "%{$keyword}%")->orWhere('body', 'LIKE', "%{$keyword}%");
+            $posts->where('body', 'LIKE', "%{$keyword}%");
         }
         $posts = $posts->get();
         return view('posts.index')->with(['posts' => $posts, 'keyword' => $keyword]);

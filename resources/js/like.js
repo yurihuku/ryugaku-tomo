@@ -1,5 +1,5 @@
 const likeBtns = document.querySelectorAll('.like-btn');
-const countNumLikes = document.querySelectorAll('.count-num-likes');
+const countNumLike = document.getElementById('count-num-like');
 
 likeBtns.forEach((likeBtn) => {
   likeBtn.addEventListener("click", async (e) =>{
@@ -17,8 +17,8 @@ likeBtns.forEach((likeBtn) => {
     .then((data) =>{
       if(data.likesCount){
         console.log(data);
-        console.log(countNumLikes);
-        countNumLikes.innerHTML = data.likesCount;
+        console.log(countNumLike);
+        countNumLike.innerHTML = data.likesCount;
         // if(e.target.classList.contains("text-pink-500")){
         //   e.target.classList.remove("text-pink-500");
         //   e.target.setAttribute("name", "heart-outline");
@@ -29,7 +29,7 @@ likeBtns.forEach((likeBtn) => {
       }else{
         window.alert(data.message);
       }
-      location.reload();
+      // location.reload();
     })
     .catch(error => {
       console.error('通信に失敗しました', error);

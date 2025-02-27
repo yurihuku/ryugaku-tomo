@@ -26,6 +26,12 @@ Route::get('/', [QuestionController::class, 'index'])->middleware("auth")->name(
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Reactions
+Route::post('/posts/{post}/like', [LikeController::class, 'likePost'])->middleware("auth");
+
+Route::post('/posts/{post}/support', [SupportController::class, 'SupportPost'])->middleware("auth");
+
+
 
 // Question
 
@@ -54,11 +60,6 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 Route::post('/posts/reply', [PostReplyController::class, 'reply'])->middleware("auth");
 
 Route::post('/questions/reply', [QuestionReplyController::class, 'reply'])->middleware("auth");
-
-// Reactions
-Route::post('/posts/{post}/like', [LikeController::class, 'likePost'])->middleware("auth");
-
-Route::post('/posts/{post}/support', [SupportController::class, 'SupportPost'])->middleware("auth");
 
 
 Route::middleware('auth')->group(function () {

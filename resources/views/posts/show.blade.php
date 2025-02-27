@@ -42,7 +42,7 @@
       <div class="reactions flex justify-center gap-2.5 pt-4">
         <div class="like_reaction">
           <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(0deg, #3b7df8, #4bfaef)"><ion-icon name="heart" class="like-btn cursor-pointer text-white w-14 h-14" id="{{$post->id}}_like"></ion-icon></div>
-          <p class="count-num-likes text-center">{{ $post->likes()->sum('count') }}</p>
+          <p id="count-num-like" class="text-center">{{ $post->likes()->sum('count') }}</p>
           <p class="mt-1 text-center text-sm">わかる</p>
         </div>
 

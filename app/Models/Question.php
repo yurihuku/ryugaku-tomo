@@ -16,6 +16,15 @@ class Question extends Model
         'user_id',
     ];
     
+    // ページ
+    // public function getByLimit(int $limit_count = 1){
+    //     return $this->orderby('updated_at', 'DESC')->limit($limit_count)->get();
+    // }
+
+    // public function getPaginateByLimit(int $limit_count = 1){
+    //     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    // }
+
     public function user(){
         return $this->belongsTo(User::class);
     }
