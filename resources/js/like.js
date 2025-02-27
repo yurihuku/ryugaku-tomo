@@ -19,13 +19,13 @@ likeBtns.forEach((likeBtn) => {
         console.log(data);
         console.log(countNumLikes);
         countNumLikes.innerHTML = data.likesCount;
-        if(e.target.classList.contains("text-pink-500")){
-          e.target.classList.remove("text-pink-500");
-          e.target.setAttribute("name", "heart-outline");
-        }else{
-          e.target.classList.add("text-pink-500");
-          e.target.setAttribute("name", "heart");
-        }
+        // if(e.target.classList.contains("text-pink-500")){
+        //   e.target.classList.remove("text-pink-500");
+        //   e.target.setAttribute("name", "heart-outline");
+        // }else{
+        //   e.target.classList.add("text-pink-500");
+        //   e.target.setAttribute("name", "heart");
+        // }
       }else{
         window.alert(data.message);
       }

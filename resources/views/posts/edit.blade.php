@@ -13,11 +13,11 @@
     <form action="/posts/{{ $post->id }}" method="POST">
       @csrf
       @method('PUT')
-      <div class="title">
+      <!-- <div class="title">
         <h2>タイトル</h2>
         <input type="text" name="post[title]" value="{{ $post->title }}" />
         <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
-      </div>
+      </div> -->
       <div class="body">
         <h2>本文</h2>
         <textarea name="post[body]">{{ $post->body }}</textarea>

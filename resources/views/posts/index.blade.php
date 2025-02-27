@@ -64,7 +64,7 @@
                 <div class="show__heart flex items-center gap-0.5">
                   @auth
                   @if (Auth::user()->likes()->where('post_id', $post->id)->exists())
-                  <ion-icon name="heart" class="like-btn cursor-pointer text-pink-500" id="{{$post->id}}_like"></ion-icon>
+                  <ion-icon name="heart" class="like-btn cursor-pointer" style="background:linear-gradient(0deg, #3b7df8, #4bfaef); -webkit-background-clip: text; -webkit-text-fill-color:transparent;" id="{{$post->id}}_like"></ion-icon>
                   @else
                   <ion-icon name="heart-outline" class="like-btn cursor-pointer" id="{{$post->id}}_like"></ion-icon>
                   @endif
@@ -74,7 +74,7 @@
                 <div class="show__flame flex items-center gap-0.5">
                   @auth
                   @if (Auth::user()->supports()->where('post_id', $post->id)->exists())
-                  <ion-icon name="flame" class="support-btn cursor-pointer text-pink-500" id="{{$post->id}}_support"></ion-icon>
+                  <ion-icon name="flame" class="support-btn cursor-pointer" style="background:linear-gradient(0deg, #3b7df8, #4bfaef); -webkit-background-clip: text; -webkit-text-fill-color:transparent;" id="{{$post->id}}_support"></ion-icon>
                   @else
                   <ion-icon name="flame-outline" class="support-btn cursor-pointer" id="{{$post->id}}_support"></ion-icon>
                   @endif
