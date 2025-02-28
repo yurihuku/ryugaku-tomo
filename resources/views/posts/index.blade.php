@@ -93,6 +93,9 @@
           </div>
         </a>
         @endforeach
+        <div class="paginate">
+          {{ $posts->links() }}
+        </div>
 
       </div>
     </main>

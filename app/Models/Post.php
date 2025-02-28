@@ -15,6 +15,11 @@ class Post extends Model
         'user_id',
     ];
 
+    public static function getPaginateByLimit($query, int $limit_count = 1){
+        return $query->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+
+
     public function user(){
         return $this->belongsTo(User::class);
     }

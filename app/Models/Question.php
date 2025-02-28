@@ -17,16 +17,15 @@ class Question extends Model
     ];
     
     // ページネート
-    public function getByLimit(int $limit_count = 1){
-        return self::orderby('updated_at', 'DESC')->limit($limit_count)->get();
-    }
+    // public function getByLimit(int $limit_count = 1){
+    //     return self::orderby('updated_at', 'DESC')->limit($limit_count)->get();
+    // }
 
     // public function getPaginateByLimit(int $limit_count = 1){
     //   return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     // }
 
     public static function getPaginateByLimit($query, int $limit_count = 1){
-
         return $query->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
