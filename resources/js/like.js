@@ -15,6 +15,7 @@ likeBtns.forEach((likeBtn) => {
     })
     .then((res) => res.json())
     .then((data) =>{
+      // console.log(data.likesCount);
       if(data.likesCount){
         console.log(data);
         console.log(countNumLike);

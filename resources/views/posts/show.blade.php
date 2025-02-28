@@ -32,7 +32,7 @@
           <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="button" onclick="deleteQuestion({{ $post->id }})"><ion-icon name="trash-outline"></ion-icon></button>
+            <button type="button" onclick="deletePost({{ $post->id }})"><ion-icon name="trash-outline"></ion-icon></button>
           </form>
         </div>
         <!-- <div class="edit"><a href="/posts/{{ $post->id }}/edit">編集</a></div> -->
@@ -88,7 +88,7 @@
   </footer>
 
   <script>
-    function deletepost(id) {
+    function deletePost(id) {
       'use strict'
 
       if (confirm('本当に削除しますか？')) {

@@ -24,9 +24,12 @@ class QuestionController extends Controller
         if(!empty($keyword)){
             $questions->where('title', 'LIKE', "%{$keyword}%")->orWhere('body', 'LIKE', "%{$keyword}%");
         }
-        $questions = $questions->get();
-        // ページ
+        // $questions = $questions->get();
+
+        // ページネート
         // $questions = $questions->getPaginateByLimit(1);
+        $questions = Question::getPaginateByLimit($questions, 1);
+
         return view('questions.index')->with(['questions' => $questions, 'keyword' => $keyword]);
     }
 
