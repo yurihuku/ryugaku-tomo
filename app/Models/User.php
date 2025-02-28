@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
+    // public function likes()
+    // {
+    //     return $this->belongsToMany(Post::class, 'likes')->withPivot('count')->withTimestamps();
+    // }
+
     public function supports(){
         return $this->hasMany(Support::class);
     }

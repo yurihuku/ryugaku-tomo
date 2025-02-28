@@ -39,6 +39,17 @@ class Post extends Model
         return $this->belongsToMany(User::class, 'likes');
     }
 
+    // public function userLikes()
+    // {
+    //     return $this->belongsToMany(User::class, 'likes')->withPivot('count')->withTimestamps();
+    // }
+
+    // //現在ログイン中のユーザーが投稿にした「いいね」を取得する用
+    // public function userLike()
+    // {
+    //     return $this->belongsToMany(User::class, 'likes')->wherePivot('user_id', auth()->id())->withPivot('count')->withTimestamps();
+    // }
+
     public function userSupports(){
         return $this->belongsToMany(User::class, 'supports');
     }

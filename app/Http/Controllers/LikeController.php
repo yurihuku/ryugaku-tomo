@@ -35,4 +35,33 @@ class LikeController extends Controller
         ];
         return response()->json($param);
     }
+
+    // public function likePost(Post $post)
+    // {
+    //     $user_id = Auth::id();
+
+    //     // 自分がこの投稿にいいねした情報を取得
+    //     $liked_post = $post->userLike()->first();
+
+    //     if (!$liked_post) {
+    //         // まだいいねしていない場合、新規追加（count=1でスタート）
+    //         $post->userLikes()->attach($user_id, ['count' => 1]);
+    //     } else {
+    //         // すでにいいね済みの場合、countを+1（最大10まで）
+    //         if ($liked_post->pivot->count < 10) {
+    //             $post->userLikes()->updateExistingPivot($user_id, [
+    //                 'count' => $liked_post->pivot->count + 1,
+    //             ]);
+    //         } else {
+    //             return response()->json(['message' => '押せるのは10回まで!'], 400);
+    //         }
+    //     }
+
+    //     // 全体のいいね数（合計）を取得
+    //     $likes_count = $post->userLikes()->sum('likes.count');
+
+    //     return response()->json([
+    //         'likesCount' => $likes_count,
+    //     ]);
+    // }
 }
