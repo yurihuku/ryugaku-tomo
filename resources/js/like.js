@@ -19,17 +19,9 @@ likeBtns.forEach((likeBtn) => {
         console.log(data);
         console.log(countNumLike);
         countNumLike.innerHTML = data.likesCount;
-        // if(e.target.classList.contains("text-pink-500")){
-        //   e.target.classList.remove("text-pink-500");
-        //   e.target.setAttribute("name", "heart-outline");
-        // }else{
-        //   e.target.classList.add("text-pink-500");
-        //   e.target.setAttribute("name", "heart");
-        // }
       }else{
         window.alert(data.message);
       }
-      // location.reload();
     })
     .catch(error => {
       console.error('通信に失敗しました', error);

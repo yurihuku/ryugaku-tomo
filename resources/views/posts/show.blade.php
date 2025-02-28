@@ -48,7 +48,7 @@
 
         <div class="support_reaction">
           <div class="flex h-16 w-16 items-center justify-center rounded-xl border" style="background: linear-gradient(0deg, #3b7df8, #4bfaef)"><ion-icon name="flame" class="support-btn cursor-pointer text-white w-12 h-12" id="{{$post->id}}_support"></ion-icon></div>
-          <p class="count-num-supports text-center">{{ $post->supports()->sum('count') }}</p>
+          <p id="count-num-support" class="text-center">{{ $post->supports()->sum('count') }}</p>
           <p class="mt-1 text-center text-sm">応援する</p>
         </div>
     </div>

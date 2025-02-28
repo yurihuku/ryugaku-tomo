@@ -1,5 +1,5 @@
 const supportBtns = document.querySelectorAll('.support-btn');
-const countNumSupports = document.querySelectorAll('.count-num-supports');
+const countNumSupport = document.getElementById('count-num-support');
 
 supportBtns.forEach((supportBtn) => {
   supportBtn.addEventListener("click", async (e) =>{
@@ -15,18 +15,10 @@ supportBtns.forEach((supportBtn) => {
     .then((res) => res.json())
     .then((data) =>{
       if(data.supportsCount){
-        countNumSupports.innerHTML = data.supportsCount;
-        // if(e.target.classList.contains("text-pink-500")){
-        //   e.target.classList.remove("text-pink-500");
-        //   e.target.setAttribute("name", "flame-outline");
-        // }else{
-        //   e.target.classList.add("text-pink-500");
-        //   e.target.setAttribute("name", "flame");
-        // }
+        countNumSupport.innerHTML = data.supportsCount;
       }else{
         window.alert(data.message);
       }
-      // location.reload();
     })
     
     .catch(error => {
