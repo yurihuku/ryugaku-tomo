@@ -51,6 +51,9 @@ class QuestionController extends Controller
     }
 
     public function edit(Question $question){
+        if($question->user_id !== auth()->id()){
+            return redirect('/questions/' . $question->id)->with('error', 'この投稿は編集できません');
+        }
         return view('questions.edit')->with(['question' => $question]);
     }
 
@@ -61,6 +64,9 @@ class QuestionController extends Controller
     }
 
     public function delete(Question $question){
+        if($question->user_id !== auth()->id()){
+            return redirect('/questions/' . $question->id)->with('error', 'この投稿は削除できません');
+        }
         $question->delete();
         return redirect('/');
     }

@@ -50,6 +50,9 @@ class PostController extends Controller
     }
 
     public function edit(Post $post){
+        if($post->user_id !== auth()->id()){
+            return redirect('/posts/' . $post->id)->with('error', 'この投稿は編集できません');
+        }
         return view('posts.edit')->with(['post' => $post]);
     }
 
@@ -60,6 +63,9 @@ class PostController extends Controller
     }
 
     public function delete(Post $post){
+        if($post->user_id !== auth()->id()){
+            return redirect('/posts/' . $post->id)->with('error', 'この投稿は削除できません');
+        }
         $post->delete();
         return redirect('/posts');
     }

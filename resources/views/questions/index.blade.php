@@ -14,6 +14,12 @@
     <p class="font-semibold text-xl text-gray-500 leading-tight">留学Q&A</p>
   </x-slot>
 
+  <!-- @if(session('error'))
+    <div class="alert alert-danger fixed top-0 left-0 w-full bg-red-500 text-white text-center py-2">
+        {{ session('error') }}
+    </div>
+  @endif -->
+
   <a href="/questions/create" class="fixed bottom-16 right-16 flex flex-col items-center py-5 px-2 border border-gray-300 rounded-lg">
     <span class="bg-white absolute inset-0 opacity-50 rounded-md"></span>
     <ion-icon name="create" size="large" class="text-6xl" style="color:#3b7df8"></ion-icon>
@@ -26,7 +32,7 @@
     <!-- 検索機能 -->
     <div class="search__area">
       <div class="text-lg text-gray-400 text-center">過去のQ&Aから解決</div>
-      <form action="/questions" method="GET">
+      <form action="/" method="GET">
         <div class="h-10 w-56 mx-auto flex items-center justify-center">
           <input type="text" name="keyword" value="{{$keyword}}" placeholder="キーワードで検索" class="border border-gray-600 rounded-l-md h-full flex px-3 text-gray-700">
           <button type="submit" class="border border-gray-600 rounded-r-md cursor-pointer h-full px-3 bg-gray-800 tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none active:bg-gray-900 inset-0"><ion-icon name="search-outline" style="place-items: center;" class="text-xl"></ion-icon></button>
