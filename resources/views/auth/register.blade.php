@@ -10,7 +10,7 @@
         </div>
 
          <!-- 留学先国 -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="country_id" :value="__('留学先の国')" />
 
             <!-- 編集前 -->
@@ -26,7 +26,7 @@
         </div>
 
         <!-- 留学開始日 -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="study_abroad_start_date" :value="__('留学開始日')" />
             <x-text-input id="study_abroad_start_date" class="block mt-1 w-full" type="date" name="study_abroad_start_date" :value="old('study_abroad_start_date')" required/>
             <x-input-error :messages="$errors->get('study_abroad_start_date')" class="mt-2" />
