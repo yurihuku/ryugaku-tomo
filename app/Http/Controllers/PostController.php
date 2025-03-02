@@ -27,7 +27,7 @@ class PostController extends Controller
         }
         // $posts = $posts->get();
 
-        $posts = Post::getPaginateByLimit($posts, 1);
+        $posts = Post::getPaginateByLimit($posts, 20);
 
         return view('posts.index')->with(['posts' => $posts, 'keyword' => $keyword]);
     }

@@ -47,6 +47,17 @@
             @endif
         </div>
 
+        <div>
+            <p class="text-sm font-medium text-gray-600">留学先国</p>
+            <p class="mt-1 block w-full">{{ $user->country->name }}</p>
+        </div>
+
+        <div>
+            <p class="text-sm font-medium text-gray-600">留学先開始日</p>
+            <p class="mt-1 block w-full">{{ $user->study_abroad_start_date }}</p>
+        </div>
+
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
