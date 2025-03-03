@@ -47,14 +47,15 @@
       </div>
       <div class="questions">
         @foreach ($questions as $question)
-        <div class="flex p-2 hover:bg-gray-200">
-          <h2 class="title">
-            <!-- 初めの15文字だけ見せたい -->
-            <a href="/questions/{{ $question->id }}">{{ $question->title }}</a>
-          </h2>
-          <!-- 日付だけ見せたい。時間いらない -->
-          <p class="ml-auto">{{$question->created_at}}</p>
-        </div>
+        <a href="/questions/{{ $question->id }}">
+          <div class="flex p-2 hover:bg-gray-200">
+            <h2 class="title">
+              <!-- 初めの15文字だけ見せたい -->
+              {{ $question->title }}
+            </h2>
+            <p class="ml-auto">{{$question->created_at}}</p>
+          </div>
+        </a>
         @endforeach
       </div>
       <div class="paginate">

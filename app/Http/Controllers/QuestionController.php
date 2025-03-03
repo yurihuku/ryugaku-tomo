@@ -28,7 +28,7 @@ class QuestionController extends Controller
 
         // ページネート
         // $questions = $questions->getPaginateByLimit(1);
-        $questions = Question::getPaginateByLimit($questions, 20);
+        $questions = Question::getPaginateByLimit($questions, 10);
 
         return view('questions.index')->with(['questions' => $questions, 'keyword' => $keyword]);
     }

@@ -25,7 +25,7 @@ class Question extends Model
     //   return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     // }
 
-    public static function getPaginateByLimit($query, int $limit_count = 20){
+    public static function getPaginateByLimit($query, int $limit_count = 10){
         return $query->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
