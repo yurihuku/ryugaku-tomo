@@ -15,7 +15,7 @@ class Post extends Model
         'user_id',
     ];
 
-    public static function getPaginateByLimit($query, int $limit_count = 20){
+    public static function getPaginateByLimit($query, int $limit_count = 8){
         return $query->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
