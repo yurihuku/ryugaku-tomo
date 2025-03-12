@@ -21,6 +21,11 @@
 |JavaScript||
 |TailwindCSS|3.1.0|
 
+### テストアカウント
+Email: test@us.com<br>
+Password: ryugakupass<br>
+デプロイ先URL: https://ryugaku-tomo-d04bf55e0009.herokuapp.com/
+
 
 
 <!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
