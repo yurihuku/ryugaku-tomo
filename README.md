@@ -1,4 +1,29 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 留学TOMO
+
+### 概要
+日本人留学生向けのQ&Aコミュニティアプリ
+
+### 目的
+「日本人視点でしか解決できない疑問」 「日本人だからこそ共感できる体験」を共有する
+<br>
+### 機能一覧
+- 投稿機能（表示・作成・編集・削除）
+- 返信機能
+- いいね機能（１人１投稿につき10回までいいねボタンを押せる）
+- キーワード検索機能
+
+### 主要技術
+|言語・フレームワーク|バージョン|
+|--------------------| -------- |
+|PHP|8.1|
+|Laravel|10.10|
+|MySQL|8.4.4|
+|JavaScript||
+|TailwindCSS|3.1.0|
+
+
+
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +88,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
